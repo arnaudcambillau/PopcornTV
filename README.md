@@ -15,58 +15,50 @@
   <img src="https://img.shields.io/badge/GitHub-121013?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </p>
 
-<p align="center">
-  <a href="https://github.com/arnaudcambillau/PopcornTV"><img src="https://img.shields.io/github/stars/arnaudcambillau/PopcornTV?style=for-the-badge&logo=github"></a>
-  <img src="https://img.shields.io/badge/License-Educative-green?style=for-the-badge">
-</p>
-
 ---
 
 ## 📋 Description
 
 **PopcornTV** est un site de streaming fictif développé en **PHP**, permettant de parcourir, ajouter et visionner des films.  
-Le projet a été conçu pour apprendre la **gestion de projet web**, l’**authentification utilisateur** et la **manipulation de bases de données** avec PHP et MySQL.
+Le projet a été conçu pour apprendre la **gestion de projet web**, l’**authentification utilisateur** et la **manipulation de bases de données** avec PHP, MySQL et MAMP.  
+
+Le CSS de PopcornTV a été généré avec l’aide d’une **IA** pour assurer un design moderne, responsive et fluide.  
+> ⚠️ **Remarque :** Seule la partie CSS a été générée par l’IA. Le but du projet était de travailler le **backend avec PHP, MAMP et MySQL**.
 
 ---
 
 ## 📁 Structure du Projet
 
-- **PopcornTV/**
-  - **image/** – Logo et images du site  
-    - PopcornTV.png
-  - **uploads/** – Images des films  
-    - (images des films)
-  - style.css – Styles principaux du site  
-  - menu.php – Menu de navigation commun  
-  - acceuil.php – Page d'accueil avec derniers films  
-  - films.php – Liste complète des films  
-  - lecture.php – Lecture d'un film via iframe  
-  - connexion.php – Page de connexion utilisateur  
-  - inscription.php – Page d'inscription utilisateur  
-  - logout.php – Déconnexion utilisateur  
-  - admin.php – Espace admin pour gérer les films  
-  - config.php – Configuration de la base de données  
-  - .gitignore – Fichiers à ignorer dans git  
-  - README.md – Ce fichier  
+PopcornTV/
+- image/        # Logo et images du site
+  - PopcornTV.png
+- uploads/      # Images des films
+  - (images des films)
+- style.css     # Styles principaux du site
+- menu.php      # Menu de navigation commun
+- acceuil.php   # Page d'accueil avec derniers films
+- films.php     # Liste complète des films
+- lecture.php   # Lecture d'un film via iframe
+- connexion.php # Page de connexion utilisateur
+- inscription.php # Page d'inscription utilisateur
+- logout.php    # Déconnexion utilisateur
+- admin.php     # Espace admin pour gérer les films
+- config.php    # Configuration de la base de données
+- .gitignore    # Fichiers à ignorer dans git
+- README.md     # Ce fichier
 
 ---
 
 ## ✨ Fonctionnalités
 
-- 🏠 **Page d'accueil** – Affiche les derniers films ajoutés  
-- 🎬 **Liste complète des films** – Parcourez tous les films disponibles  
-- ▶️ **Lecture individuelle** – Visionnez chaque film via iframe  
-- 🛠️ **Espace Admin** – Ajouter, modifier ou supprimer des films  
-- 👥 **Gestion des utilisateurs** – Inscription, connexion, déconnexion  
-- 🖼️ **Upload d’images** – Ajouter une miniature pour chaque film  
-- 📱 **Interface responsive** – Adaptée à tous les écrans  
-- ♿ **Accessibilité** – Respect des bonnes pratiques web  
-
----
-
-## 🖌️ CSS et Design
-
-Le CSS de PopcornTV a été généré avec l’aide d’une IA (ChatGPT) pour assurer un design moderne, responsive et fluide.
+- 🏠 **Page d'accueil** – Affiche les derniers films ajoutés
+- 🎬 **Liste complète des films** – Parcourez tous les films disponibles
+- ▶️ **Lecture individuelle** – Visionnez chaque film via iframe
+- 🛠️ **Espace Admin** – Ajouter, modifier ou supprimer des films
+- 👥 **Gestion des utilisateurs** – Inscription, connexion, déconnexion
+- 🖼️ **Upload d’images** – Ajouter une miniature pour chaque film
+- 📱 **Interface responsive** – Adaptée à tous les écrans
+- ♿ **Accessibilité** – Respect des bonnes pratiques web
 
 ---
 
@@ -74,8 +66,9 @@ Le CSS de PopcornTV a été généré avec l’aide d’une IA (ChatGPT) pour as
 
 - **PHP** – Logique côté serveur et gestion des utilisateurs  
 - **HTML5** – Structure sémantique des pages  
-- **CSS3** – Styles et responsive design  
+- **CSS3** – Styles et responsive design (généré par IA)  
 - **MySQL** – Base de données pour les films et utilisateurs  
+- **MAMP** – Serveur local pour tester le backend  
 
 ---
 
@@ -85,6 +78,7 @@ Le CSS de PopcornTV a été généré avec l’aide d’une IA (ChatGPT) pour as
 ```bash
 git clone https://github.com/arnaudcambillau/PopcornTV.git
 cd PopcornTV
+
 
 ```
 
