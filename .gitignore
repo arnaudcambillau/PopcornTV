@@ -1,0 +1,9 @@
+# Fichiers de configuration sensibles
+config.php
+
+# Dossier des images uploadées
+/uploads/
+
+# Logs et fichiers temporaires
+*.log
+*.tmp
