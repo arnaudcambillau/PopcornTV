@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <em>Une plateforme de streaming moderne et responsive, 100% <strong>PHP / CSS / HTML</strong>.</em>
+  <em>Une plateforme de streaming moderne <strong>PHP / CSS / HTML</strong>.</em>
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 **PopcornTV** est un site de streaming fictif développé en **PHP**, permettant de parcourir, ajouter et visionner des films.  
 Le projet a été conçu pour apprendre la **gestion de projet web**, l’**authentification utilisateur** et la **manipulation de bases de données** avec PHP, MySQL et MAMP.  
 
-Le CSS de PopcornTV a été généré avec l’aide d’une **IA** pour assurer un design moderne, responsive et fluide.  
+Le CSS de PopcornTV a été généré avec l’aide d’une **IA** pour assurer un design moderne et fluide.  
 > ⚠️ **Remarque :** Seule la partie CSS a été générée par l’IA. Le but du projet était de travailler le **backend avec PHP, MAMP et MySQL**.
 
 ---
@@ -66,7 +66,7 @@ PopcornTV/
 
 - **PHP** – Logique côté serveur et gestion des utilisateurs  
 - **HTML5** – Structure sémantique des pages  
-- **CSS3** – Styles et responsive design (généré par IA)  
+- **CSS3** – Styles et design (généré par IA)  
 - **MySQL** – Base de données pour les films et utilisateurs  
 - **MAMP** – Serveur local pour tester le backend  
 
