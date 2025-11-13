@@ -31,26 +31,23 @@ Le projet a été conçu pour apprendre la **gestion de projet web**, l’**auth
 
 ## 📁 Structure du Projet
 
-PopcornTV/
-│
-├── image/        # Logo et images du site
-│   └── PopcornTV.png
-│
-├── uploads/      # Images des films
-│   └── (images des films)
-│
-├── style.css     # Styles principaux du site
-├── menu.php      # Menu de navigation commun
-├── acceuil.php   # Page d'accueil avec derniers films
-├── films.php     # Liste complète des films
-├── lecture.php   # Lecture d'un film via iframe
-├── connexion.php # Page de connexion utilisateur
-├── inscription.php # Page d'inscription utilisateur
-├── logout.php    # Déconnexion utilisateur
-├── admin.php     # Espace admin pour gérer les films
-├── config.php    # Configuration de la base de données
-├── .gitignore    # Fichiers à ignorer dans git
-└── README.md     # Ce fichier
+- **PopcornTV/**
+  - **image/** – Logo et images du site  
+    - PopcornTV.png
+  - **uploads/** – Images des films  
+    - (images des films)
+  - style.css – Styles principaux du site  
+  - menu.php – Menu de navigation commun  
+  - acceuil.php – Page d'accueil avec derniers films  
+  - films.php – Liste complète des films  
+  - lecture.php – Lecture d'un film via iframe  
+  - connexion.php – Page de connexion utilisateur  
+  - inscription.php – Page d'inscription utilisateur  
+  - logout.php – Déconnexion utilisateur  
+  - admin.php – Espace admin pour gérer les films  
+  - config.php – Configuration de la base de données  
+  - .gitignore – Fichiers à ignorer dans git  
+  - README.md – Ce fichier  
 
 ---
 
