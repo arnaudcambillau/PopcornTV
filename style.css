@@ -1,0 +1,205 @@
+/* --------------------------- */
+/* 🎬 PopcornTV - Style 2025  */
+/* --------------------------- */
+
+/* 🌈 Palette */
+:root {
+    --rouge: #E63946;
+    --jaune: #FFD166;
+    --blanc: #FFFFFF;
+    --gris-clair: #F4F4F9;
+    --gris: #E0E0E0;
+    --gris-fonce: #2B2D42;
+    --noir: #1D1D1D;
+}
+
+/* 📚 Typographie */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;500&family=Montserrat:wght@700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--gris-clair);
+    color: var(--gris-fonce);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 🧭 Navigation */
+nav {
+    background-color: var(--blanc);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--gris-fonce);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+nav ul li a:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+    box-shadow: 0 4px 10px rgba(255,209,102,0.3);
+}
+
+/* 🏠 Titres */
+h1, h2, h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--rouge);
+    text-align: center;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+P{
+    font-family: 'Fredoka One', cursive;
+    color: var(--noir);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+/* 🎥 Liste de films */
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+li {
+    background-color: var(--blanc);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+li img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+li img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* 🧾 Formulaires */
+form {
+    background-color: var(--blanc);
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--gris-fonce);
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gris);
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    background-color: var(--rouge);
+    color: var(--blanc);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+    transform: scale(1.05);
+}
+
+/* 🧁 Messages d’erreur / succès */
+p[style*="color: red"],
+p[style*="color: green"] {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+    width: fit-content;
+    margin: 15px auto;
+}
+
+p[style*="color: red"] {
+    background-color: rgba(230,57,70,0.1);
+    color: var(--rouge);
+}
+
+p[style*="color: green"] {
+    background-color: rgba(255,209,102,0.1);
+    color: #FFD166;
+}
+
+/* 🎬 Logo */
+img[alt="logo PopcornTV"] {
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
