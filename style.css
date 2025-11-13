@@ -203,3 +203,107 @@ img[alt="logo PopcornTV"] {
     border-radius: 15px;
 }
 
+/* --------------------------- */
+/* 🧭 Navigation - Menu Responsive */
+/* --------------------------- */
+
+nav {
+    background-color: var(--blanc);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo du site dans le menu */
+nav .logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: var(--rouge);
+}
+
+/* Menu principal */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Liens du menu */
+nav ul li a {
+    color: var(--gris-fonce);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+    box-shadow: 0 4px 10px rgba(255,209,102,0.3);
+}
+
+/* Burger menu pour mobile */
+nav .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+nav .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--gris-fonce);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* --------------------------- */
+/* Responsive Menu */
+@media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--blanc);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul.active {
+        transform: translateX(0);
+    }
+
+    nav .burger {
+        display: flex;
+    }
+}
+
+/* Animation burger actif */
+nav .burger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+nav .burger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+nav .burger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}

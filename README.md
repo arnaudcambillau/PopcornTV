@@ -64,6 +64,12 @@ Le projet a été conçu pour apprendre la **gestion de projet web**, l’**auth
 
 ---
 
+## 🖌️ CSS et Design
+
+Le CSS de PopcornTV a été généré avec l’aide d’une IA (ChatGPT) pour assurer un design moderne, responsive et fluide.
+
+---
+
 ## 🧩 Technologies utilisées
 
 - **PHP** – Logique côté serveur et gestion des utilisateurs  
