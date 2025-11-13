@@ -1,3 +1,7 @@
+# -------------------------------
+# PopcornTV - .gitignore
+# -------------------------------
+
 # Fichiers de configuration sensibles
 config.php
 
@@ -7,3 +11,21 @@ config.php
 # Logs et fichiers temporaires
 *.log
 *.tmp
+*.bak
+*.swp
+
+# Cache / sessions
+/tmp/
+sessions/
+*.cache
+
+# IDE / éditeurs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Système
+.DS_Store
+Thumbs.db
+
