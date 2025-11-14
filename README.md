@@ -67,7 +67,8 @@ PopcornTV/
 
 - **PHP** – Logique côté serveur et gestion des utilisateurs  
 - **HTML5** – Structure sémantique des pages  
-- **CSS3** – Styles et design (généré par IA)  
+- **CSS3** – Styles et design (généré par IA) 
+- **js** – Logique de gestion du dark mode front end
 - **MySQL** – Base de données pour les films et utilisateurs  
 - **MAMP** – Serveur local pour tester le backend  
 
