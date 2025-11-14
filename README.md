@@ -40,6 +40,7 @@ PopcornTV/
 - films.php     # Liste complète des films
 - lecture.php   # Lecture d'un film via iframe
 - connexion.php # Page de connexion utilisateur
+- dark_mode.js   # Configuration de la fonctionnalité Dark Mode en JavaScript
 - inscription.php # Page d'inscription utilisateur
 - logout.php    # Déconnexion utilisateur
 - admin.php     # Espace admin pour gérer les films
