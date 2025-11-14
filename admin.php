@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Upload photo si elle est presente
         if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
             $ext = strtolower(pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION));
-            if (in_array($ext, ['jpg','jpeg','png','gif','webp'])) {
+            if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
                 $newName = 'uploads/film_' . uniqid() . '.' . $ext;
                 if (move_uploaded_file($_FILES['photo']['tmp_name'], $newName)) {
                     $urlphoto = $newName;
@@ -49,30 +49,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<title>Admin - Ajouter film</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Admin - Ajouter film</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
+
 <body>
-<?php include 'menu.php'; ?>
+    <?php include 'menu.php'; ?>
 
-<h1>Ajouter un film</h1>
+    <h1>Ajouter un film</h1>
 
-<?php if ($error) echo "<p style='color:red'>$error</p>"; ?>
-<?php if ($success) echo "<p style='color:green'>$success</p>"; ?>
+    <?php if ($error) echo "<p style='color:red'>$error</p>"; ?>
+    <?php if ($success) echo "<p style='color:green'>$success</p>"; ?>
 
-<form method="POST" enctype="multipart/form-data">
-    <label>Titre* :</label><br>
-    <input type="text" name="title" required maxlength="100"><br> 
-    <label>Description* (max 255 caractères) :</label><br>
-    <textarea name="description" required maxlength="255"></textarea><br>
-    <label>Photo :</label><br>
-    <input type="file" name="photo" accept="image/*"><br>
-    <label>Code iframe vidéo :</label><br>
-    <textarea name="urlvideo" placeholder='<iframe src="..."></iframe>'></textarea><br>
-    <button type="submit">Ajouter</button>
-</form>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Titre* :</label><br>
+        <input type="text" name="title" required maxlength="100"><br>
+        <label>Description* (max 255 caractères) :</label><br>
+        <textarea name="description" required maxlength="255"></textarea><br>
+        <label>Photo :</label><br>
+        <input type="file" name="photo" accept="image/*"><br>
+        <label>Code iframe vidéo :</label><br>
+        <textarea name="urlvideo" placeholder='<iframe src="..."></iframe>'></textarea><br>
+        <button type="submit">Ajouter</button>
+    </form>
 
 </body>
+
 </html>

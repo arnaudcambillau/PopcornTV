@@ -12,6 +12,7 @@ $films = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Accueil - PopcornTV 🍿</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
 <body>
 
@@ -42,5 +43,6 @@ $films = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     <p>Aucun film ajouté pour le moment.</p>
 <?php endif; ?>
 
+<script src="dark_mode.js"></script>
 </body>
 </html>

@@ -1,64 +1,161 @@
 /* --------------------------- */
 /* 🎬 PopcornTV - Style 2025  */
+/* 🌙 Dark Mode & Responsive   */
 /* --------------------------- */
 
-/* 🌈 Palette */
+/* 🌈 Palette Light Mode */
 :root {
     --rouge: #E63946;
     --jaune: #FFD166;
     --blanc: #FFFFFF;
     --gris-clair: #F4F4F9;
     --gris: #E0E0E0;
+    --gris-moyen: #8E8E93;
     --gris-fonce: #2B2D42;
     --noir: #1D1D1D;
+    
+    /* Variables de thème */
+    --bg-primary: #F4F4F9;
+    --bg-secondary: #FFFFFF;
+    --text-primary: #2B2D42;
+    --text-secondary: #1D1D1D;
+    --border-color: #E0E0E0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* 🌙 Dark Mode */
+[data-theme="dark"] {
+    --bg-primary: #1D1D1D;
+    --bg-secondary: #2B2D42;
+    --text-primary: #F4F4F9;
+    --text-secondary: #E0E0E0;
+    --border-color: #3D3F52;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.5);
+    --gris-clair: #2B2D42;
 }
 
 /* 📚 Typographie */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;500&family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--gris-clair);
-    color: var(--gris-fonce);
-    margin: 0;
-    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* 🧭 Navigation */
 nav {
-    background-color: var(--blanc);
-    padding: 15px 0;
+    background-color: var(--bg-secondary);
+    padding: 15px 20px;
     position: sticky;
     top: 0;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    z-index: 100;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Logo à gauche */
+nav ul li:first-child {
+    margin-right: auto;
+}
+
+/* Bouton dark mode à droite */
+nav ul li:has(#themeToggle) {
+    margin-left: auto;
+}
+
+nav ul li {
+    display: inline-block;
 }
 
 nav ul li a {
-    color: var(--gris-fonce);
+    color: var(--text-primary);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: 0.3s;
-    padding: 5px 10px;
-    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: block;
 }
 
 nav ul li a:hover {
     background-color: var(--jaune);
     color: var(--noir);
-    box-shadow: 0 4px 10px rgba(255,209,102,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 209, 102, 0.3);
+}
+
+/* Style du logo dans le menu */
+nav ul li:first-child a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.3rem;
+    color: var(--rouge);
+    padding: 5px 10px;
+}
+
+nav ul li:first-child a:hover {
+    background-color: transparent;
+    color: var(--jaune);
+    transform: scale(1.05);
+}
+
+/* 🌙 Bouton Dark Mode */
+#themeToggle {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+}
+
+#themeToggle:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+    transform: rotate(180deg) scale(1.1);
+    border-color: var(--jaune);
+}
+
+/* 🏠 Container principal */
+.container,
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* 🏠 Titres */
@@ -67,138 +164,452 @@ h1, h2, h3 {
     color: var(--rouge);
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin-bottom: 10px;
 }
 
-P{
-    font-family: 'Fredoka One', cursive;
-    color: var(--noir);
+h3 a {
+    color: var(--rouge);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+h3 a:hover {
+    color: var(--jaune);
+    text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-secondary);
     text-align: center;
-    margin-top: 20px;
-    font-size: 1.5rem;
+    margin: 15px 0;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.8;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--border-color);
+    margin: 30px auto;
+    max-width: 90%;
 }
 
 /* 🎥 Liste de films */
-ul {
+ul:not(nav ul) {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin: 30px auto;
     max-width: 1200px;
 }
 
-li {
-    background-color: var(--blanc);
+li:not(nav li) {
+    background-color: var(--bg-secondary);
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
-li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+li:not(nav li):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px var(--shadow-hover);
 }
 
-li img {
+li:not(nav li) img {
     border-radius: 10px;
     max-width: 100%;
     height: auto;
-    transition: transform 0.3s, filter 0.3s;
+    transition: all 0.3s ease;
+    margin: 10px 0;
 }
 
-li img:hover {
+li:not(nav li) img:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
 
 /* 🧾 Formulaires */
 form {
-    background-color: var(--blanc);
-    max-width: 450px;
+    background-color: var(--bg-secondary);
+    max-width: 500px;
     margin: 30px auto;
-    padding: 25px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: var(--gris-fonce);
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
 }
 
 input[type="text"],
 input[type="password"],
+input[type="file"],
 textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid var(--gris);
-    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
     font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }
 
-button {
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--rouge);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button,
+.btn-primary {
     background-color: var(--rouge);
     color: var(--blanc);
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border-radius: 25px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1rem;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
 }
 
-button:hover {
+button:hover,
+.btn-primary:hover {
     background-color: var(--jaune);
     color: var(--noir);
     transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 209, 102, 0.4);
 }
 
-/* 🧁 Messages d’erreur / succès */
-p[style*="color: red"],
-p[style*="color: green"] {
+button:active {
+    transform: scale(0.98);
+}
+
+/* 🧁 Messages d'erreur / succès */
+.message {
     text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 6px;
-    width: fit-content;
-    margin: 15px auto;
+    font-weight: 600;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    animation: slideIn 0.3s ease;
 }
 
-p[style*="color: red"] {
-    background-color: rgba(230,57,70,0.1);
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.error,
+p[style*="color: red"],
+p[style*="color:red"] {
+    background-color: rgba(230, 57, 70, 0.15);
     color: var(--rouge);
+    border: 2px solid var(--rouge);
 }
 
-p[style*="color: green"] {
-    background-color: rgba(255,209,102,0.1);
-    color: #FFD166;
+.message.success,
+p[style*="color: green"],
+p[style*="color:green"] {
+    background-color: rgba(102, 255, 127, 0.15);
+    color: #14f400;
+    border: 2px solid green;
 }
 
 /* 🎬 Logo */
 img[alt="logo PopcornTV"] {
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 15px;
+    max-width: 200px;
+    height: auto;
+}
+
+/* 🎥 Lecteur vidéo */
+.video-wrapper {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    margin: 30px auto;
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow);
+    background-color: var(--noir);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 🔗 Liens */
+a {
+    color: var(--rouge);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--jaune);
+    text-decoration: underline;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 📱 RESPONSIVE - TABLETTE (max 768px) */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    
+    nav ul li:first-child a {
+        font-size: 1.1rem;
+    }
+    
+    #themeToggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
+    ul:not(nav ul) {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    form {
+        padding: 25px;
+        margin: 20px 15px;
+    }
+    
+    .container,
+    main {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .video-wrapper {
+        margin: 20px 15px;
+        border-width: 2px;
+    }
+}
+
+/* 📱 RESPONSIVE - MOBILE (max 480px) */
+@media (max-width: 480px) {
+    nav {
+        padding: 10px;
+    }
+    
+    nav ul {
+        gap: 8px;
+        justify-content: space-between;
+        row-gap: 10px;
+    }
+    
+    /* Logo reste à gauche sur la première ligne */
+    nav ul li:first-child {
+        order: -2;
+        flex: 0 0 auto;
+    }
+    
+    /* Bouton dark mode reste à droite sur la première ligne */
+    nav ul li:has(#themeToggle) {
+        order: -1;
+        flex: 0 0 auto;
+    }
+    
+    /* Les autres items passent en dessous */
+    nav ul li:not(:first-child):not(:has(#themeToggle)) {
+        flex: 0 0 calc(50% - 4px);
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+        white-space: nowrap;
+    }
+    
+    nav ul li:first-child a {
+        font-size: 1rem;
+    }
+    
+    #themeToggle {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-top: 15px;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    ul:not(nav ul) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    li:not(nav li) {
+        padding: 15px;
+    }
+    
+    form {
+        padding: 20px;
+        margin: 15px 10px;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    
+    button,
+    .btn-primary {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+    
+    .video-wrapper {
+        margin: 15px 10px;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+    
+    img[alt="logo PopcornTV"] {
+        max-width: 150px;
+    }
+    
+    .message {
+        margin: 15px 10px;
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 🔄 Animations supplémentaires */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 0.3s ease;
+}
+
+/* 🎨 Amélioration des performances */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 🌟 États de focus pour l'accessibilité */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--jaune);
+    outline-offset: 2px;
+}
+
+/* 🎭 Mode sombre - ajustements spécifiques */
+[data-theme="dark"] img {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"] img:hover {
+    filter: brightness(1);
+}
+
+[data-theme="dark"] .video-wrapper {
+    border-color: #3D3F52;
 }

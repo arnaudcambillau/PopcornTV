@@ -3,6 +3,12 @@ require_once 'config.php';
 session_start();
 
 $error = '';
+$success = '';
+
+// Message success si inscriptions
+if (isset($_GET['inscription']) && $_GET['inscription'] === 'success') {
+    $success = "Inscription réussie ! Vous pouvez maintenant vous connecter.";
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = trim($_POST['login']);
@@ -35,12 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - PopcornTV 🍿</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
 <body>
     <?php include 'menu.php'; ?>
 
     <h1>Connexion - PopcornTV 🍿</h1>
+
+    <?php if ($success): ?>
+        <p style="color: green;"><?= htmlspecialchars($success) ?></p>
+    <?php endif; ?>
 
     <?php if ($error): ?>
         <p style="color: red;"><?= htmlspecialchars($error) ?></p>

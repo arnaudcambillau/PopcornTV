@@ -2,7 +2,6 @@
 require_once 'config.php';
 
 $error = '';
-$success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = trim($_POST['login']);
@@ -31,7 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt = $pdo->prepare("INSERT INTO user (login, password) VALUES (?, ?)");
             $stmt->execute([$login, $hashed_password]);
             
-            $success = "Inscription réussie ! Vous pouvez maintenant vous connecter.";
+            // Redirection automatique vers la page de connexion
+            header('Location: connexion.php?inscription=success');
+            exit;
         }
     }
 }
@@ -44,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - PopcornTV 🍿</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
 <body>
     <?php include 'menu.php'; ?>
@@ -53,13 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php if ($error): ?>
             <div class="message error"><?= htmlspecialchars($error) ?></div>
-        <?php endif; ?>
-
-        <?php if ($success): ?>
-            <div class="message success">
-                <?= htmlspecialchars($success) ?><br>
-                <a href="connexion.php">Se connecter maintenant</a>
-            </div>
         <?php endif; ?>
 
         <form method="POST" class="auth-form">

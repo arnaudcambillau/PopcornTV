@@ -23,6 +23,7 @@ $films = $pdo->query("SELECT id, title, description, urlphoto FROM film ORDER BY
     <meta charset="UTF-8">
     <title>Tous les films - PopcornTV 🍿</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
 <body>
 <?php include 'menu.php'; ?>
