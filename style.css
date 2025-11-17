@@ -58,6 +58,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: default;
 }
 
 /* Désactiver la sélection bleue sur les labels et inputs */
