@@ -24,7 +24,6 @@ if (!$film) {
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($film['title']) ?> - PopcornTV 🍿</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
     <style>
         /* Conteneur vidéo fixe avec contrôles */
         .video-wrapper {

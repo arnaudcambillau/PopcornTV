@@ -1,3 +1,6 @@
+/* Import Material Symbols */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400');
+
 /* --------------------------- */
 /* 🎬 PopcornTV - Style 2025  */
 /* 🌙 Dark Mode & Responsive   */
@@ -55,6 +58,35 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Désactiver la sélection bleue sur les labels et inputs */
+label,
+input,
+button,
+.eye-icon,
+#eyeLabel,
+#eyeConfirmLabel {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+/Edge */
+    user-select: none;         /* Standard */
+}
+
+/* Réactiver la sélection pour les inputs de texte uniquement */
+input[type="text"],
+input[type="password"],
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Supprimer le contour bleu au focus sur les labels d'icônes */
+#eyeLabel:focus,
+#eyeConfirmLabel:focus {
+    outline: none;
 }
 
 /* 🧭 Navigation */

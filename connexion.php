@@ -36,13 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - PopcornTV 🍿</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
+
 <body>
     <?php include 'menu.php'; ?>
 
@@ -59,11 +60,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="">
         <p>
             <label>Login :</label><br>
-            <input type="text" name="login" required>
+            <input type="text" name="login" placeholder="jean-luc" required>
         </p>
         <p>
+            <!--     <label>Mot de passe :</label><br>
+            <input type="password" name="password" placeholder="*****" id="pwd" required>
+
+            <input type="checkbox" onclick="pwd.type = this.checked ? 'text' : 'password' "> -->
+
+        <p style="position: relative;">
             <label>Mot de passe :</label><br>
-            <input type="password" name="password" required>
+            <input type="password" name="password" placeholder="*****" id="pwd" required style="padding-right: 45px;">
+            <input type="checkbox" id="togglePwd" onclick="togglePasswordIcon()" style="display: none;">
+            <label for="togglePwd" id="eyeLabel" style="cursor: pointer; position: absolute; right: 15px; bottom: 2px; z-index: 10;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.6; transition: opacity 0.3s;">
+                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor" />
+                </svg>
+            </label>
+        </p>
+
         </p>
         <p>
             <button type="submit">Se connecter</button>

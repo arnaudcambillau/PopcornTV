@@ -30,4 +30,4 @@ $isConnected = isset($_SESSION['user_id']);
     </ul>
 </nav>
 
-<script src="dark_mode.js"></script>
+<script src="main.js"></script>
