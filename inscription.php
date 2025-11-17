@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($password !== $confirmPassword) {
         $error = "Les mots de passe ne correspondent pas.";
     } else {
-        // Vérifier si le login existe déjà
+        // je vérifie si le login existe déjà
         $sql = "SELECT id FROM user WHERE login = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$login]);
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->fetch()) {
             $error = "Ce login est déjà utilisé.";
         } else {
-            // Insérer le nouvel utilisateur
+            // j'insére le nouvel utilisateur
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO user (login, password) VALUES (?, ?)";
             $stmt = $pdo->prepare($sql);

@@ -1,14 +1,14 @@
 <?php
 require_once 'config.php';
 
-// Vérifie si un id est passé en URL
+// je vérifie si un id est passé en URL
 if (!isset($_GET['id'])) {
     die("Film non trouvé.");
 }
 
 $id = (int) $_GET['id'];
 
-// Récupère le film dans la base
+// je recupère le film dans la base
 $stmt = $pdo->prepare("SELECT title, description, urlvideo, urlphoto FROM film WHERE id = ?");
 $stmt->execute([$id]);
 $film = $stmt->fetch(PDO::FETCH_ASSOC);

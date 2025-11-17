@@ -41,9 +41,9 @@ PopcornTV/
 - films.php     # Liste complète des films
 - lecture.php   # Lecture d'un film via iframe
 - connexion.php # Page de connexion utilisateur
-- dark_mode.js   # Configuration de la fonctionnalité Dark Mode en JavaScript
 - inscription.php # Page d'inscription utilisateur
 - logout.php    # Déconnexion utilisateur
+- main.js       # Gère le Dark Mode et la visibilité du mot de passe.
 - admin.php     # Espace admin pour gérer les films
 - config.php    # Configuration de la base de données
 - .gitignore    # Fichiers à ignorer dans git
@@ -69,7 +69,7 @@ PopcornTV/
 - **PHP** – Logique côté serveur et gestion des utilisateurs  
 - **HTML5** – Structure sémantique des pages  
 - **CSS3** – Styles et design (généré par IA) 
-- **js** – Logique de gestion du dark mode front end
+- **js** – Gestion du Dark Mode, visibilité du mot de passe et interactions front-end
 - **MySQL** – Base de données pour les films et utilisateurs  
 - **MAMP** – Serveur local pour tester le backend  
 
